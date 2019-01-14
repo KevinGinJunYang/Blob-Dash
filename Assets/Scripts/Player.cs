@@ -17,11 +17,15 @@ public class Player : MonoBehaviour {
 	public GameObject effect;
 	private Shake shake;
 
+	public Text displayHealth;
+
 	void Start(){
 		shake = GameObject.FindGameObjectWithTag ("ScreenShake").GetComponent<Shake> ();
 	}
 
 	private void Update() {
+
+		displayHealth.text = "LIVES: " + health.ToString ();
 
 		if (health <= 0) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour {
 
-
 	public GameObject[] enemyPatterns;
 	public float startTime;
 	private float timeSpawn;
+	public float timeDecrease;
+	public float minTime;
+
+	private void Start()
+	{
+		timeSpawn = startTime;
+	}
 
 	// Update is called once per frame
 	private void Update () {
@@ -15,6 +21,10 @@ public class Spawn : MonoBehaviour {
 			int rand = Random.Range (0, enemyPatterns.Length);
 			Instantiate (enemyPatterns[rand], transform.position, Quaternion.identity);
 			timeSpawn = startTime;
+			if (startTime > minTime) {
+				startTime -= timeDecrease;
+			}
+
 		} else {
 			timeSpawn -= Time.deltaTime;
 		}
