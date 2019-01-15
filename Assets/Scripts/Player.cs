@@ -22,8 +22,6 @@ public class Player : MonoBehaviour {
 	private bool gameOver = false;
 	private Score score;
 	private int scoreCount;
-	private Spawn spawnDestroy;
-
 
 	void Start(){
 		shake = GameObject.FindGameObjectWithTag ("ScreenShake").GetComponent<Shake> ();
@@ -54,7 +52,6 @@ public class Player : MonoBehaviour {
 		
 		gameOver = true;
 		Destroy (gameObject);
-		Destroy (spawnDestroy);
 		endPanel.SetActive (true);
 	}
 		
