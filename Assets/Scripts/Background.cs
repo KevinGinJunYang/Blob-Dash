@@ -11,7 +11,6 @@ public class Background : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () {
 		transform.Translate (Vector2.left * speed * Time.deltaTime);
-
 		if (transform.position.x <= endX) {
 			Vector2 position = new Vector2 (startX, transform.position.y);
 			transform.position = position;

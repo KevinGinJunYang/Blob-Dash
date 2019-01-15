@@ -18,6 +18,12 @@ public class Player : MonoBehaviour {
 	private Shake shake;
 
 	public Text displayHealth;
+	public GameObject endPanel;
+	private bool gameOver = false;
+	private Score score;
+	private int scoreCount;
+	private Spawn spawnDestroy;
+
 
 	void Start(){
 		shake = GameObject.FindGameObjectWithTag ("ScreenShake").GetComponent<Shake> ();
@@ -28,7 +34,7 @@ public class Player : MonoBehaviour {
 		displayHealth.text = "LIVES: " + health.ToString ();
 
 		if (health <= 0) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+			EndGame ();
 		}
 
 		transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
@@ -43,5 +49,14 @@ public class Player : MonoBehaviour {
 			targetPosition = new Vector2 (transform.position.x, transform.position.y - yMovement);
 		}
 	}
+
+	public void EndGame (){
+		
+		gameOver = true;
+		Destroy (gameObject);
+		Destroy (spawnDestroy);
+		endPanel.SetActive (true);
+	}
+		
 
 }
