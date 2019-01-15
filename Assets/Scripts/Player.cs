@@ -28,7 +28,6 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Update() {
-
 		displayHealth.text = "LIVES: " + health.ToString ();
 
 		if (health <= 0) {
@@ -36,15 +35,17 @@ public class Player : MonoBehaviour {
 		}
 
 		transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+		if (Input.GetMouseButtonDown (0)) {
+			if (Input.mousePosition.y > Screen.height / 2 && transform.position.y < screenMaxHeight) {
+				shake.CamShake ();
+				Instantiate (effect, transform.position, Quaternion.identity);
+				targetPosition = new Vector2 (transform.position.x, transform.position.y + yMovement);
+			} else if (Input.mousePosition.y < Screen.height / 2 && transform.position.y > screenMinHeight) {
+				shake.CamShake ();
+				Instantiate (effect, transform.position, Quaternion.identity);
+				targetPosition = new Vector2 (transform.position.x, transform.position.y - yMovement);
+			}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) && transform.position.y < screenMaxHeight) {
-			shake.CamShake ();
-			Instantiate (effect, transform.position, Quaternion.identity);
-			targetPosition = new Vector2 (transform.position.x, transform.position.y + yMovement);
-		} else if (Input.GetKeyDown (KeyCode.DownArrow) && transform.position.y > screenMinHeight) {
-			shake.CamShake ();
-			Instantiate (effect, transform.position, Quaternion.identity);
-			targetPosition = new Vector2 (transform.position.x, transform.position.y - yMovement);
 		}
 	}
 
