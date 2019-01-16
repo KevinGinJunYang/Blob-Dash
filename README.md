@@ -14,6 +14,6 @@ How long can you survive? Dash your way through the incoming enemies and claim y
 
 
 # GamePlay
-
+![GamePlay](https://github.com/KevinGinJunYang/Blob-Dash/blob/master/Assets/Sprites/graphic-feature.png)
 
 
