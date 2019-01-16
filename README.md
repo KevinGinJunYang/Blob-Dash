@@ -13,7 +13,6 @@ How long can you survive? Dash your way through the incoming enemies and claim y
 <a href='https://play.google.com/store/apps/details?id=com.kevY.BlobDash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 <br>
 ### GamePlay
-<br>
-![alt text](https://github.com/KevinGinJunYang/Blob-Dash/blob/master/Assets/Sprites/graphic-feature.png)
+
 
 
