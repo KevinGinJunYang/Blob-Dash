@@ -6,15 +6,15 @@ public class Enemy : MonoBehaviour {
 
 	public int damage = 1;
 	public float speed;
-
 	public GameObject sound;
-
 	public GameObject effect;
 
+	//MOVEMENT OF ENEMY
 	private void Update(){
 		transform.Translate (Vector2.left * speed * Time.deltaTime);
 	}
 
+	//COLLISION DETECTION 
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.CompareTag ("Player")) {
 			Instantiate (sound, transform.position, Quaternion.identity);

@@ -15,13 +15,13 @@ public class Spawn : MonoBehaviour {
 		timeSpawn = startTime;
 	}
 
-	// Update is called once per frame
+
 	private void Update () {
-		
+		//CHECKS IF ON ENDPANEL
 		if (endPanel.activeSelf) {
 			Destroy (gameObject);
 		}
-
+		//DECREASE SPAWN TIME AS TIME PASSES 
 		if (timeSpawn <= 0) {
 			int rand = Random.Range (0, enemyPatterns.Length);
 			Instantiate (enemyPatterns[rand], transform.position, Quaternion.identity);

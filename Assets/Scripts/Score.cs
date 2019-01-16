@@ -9,6 +9,7 @@ public class Score : MonoBehaviour {
 	public Text displayScore;
 	public GameObject endPanel;
 
+	//SAVES HIGHEST SCORE 
 	private void Update(){
 		if (endPanel.activeSelf) {
 			if (PlayerPrefs.GetInt ("score") < score) {
@@ -18,7 +19,7 @@ public class Score : MonoBehaviour {
 
 		displayScore.text = "SCORE: " + score.ToString ();
 	}
-
+		
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.CompareTag ("Enemy")) {
 			score++;

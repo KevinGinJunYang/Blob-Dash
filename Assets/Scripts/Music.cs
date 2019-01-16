@@ -6,6 +6,7 @@ public class Music : MonoBehaviour {
 
 	static Music instance = null;
 
+	//SETS MUSIC
 	private void Awake(){
 		if (instance != null) {
 			Destroy (gameObject);
@@ -16,12 +17,13 @@ public class Music : MonoBehaviour {
 		}
 	}
 
+	//TOGGLES THE SOUND OFF AND ON 
 	public void ToggleSound(){
 		if (PlayerPrefs.GetInt ("Muted", 0) == 0) {
-			//set to on 
+			//SET VOL TO ON  
 			PlayerPrefs.SetInt ("Muted", 1);
 		} else {
-			// set to off
+			//SET VOL TO OFF 
 			PlayerPrefs.SetInt ("Muted", 0);
 		}
 

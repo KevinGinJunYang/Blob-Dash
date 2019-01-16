@@ -7,8 +7,8 @@ public class Background : MonoBehaviour {
 	public float speed;
 	public float endX;
 	public float startX;
-	
-	// Update is called once per frame
+
+	//UPDATES BACKGROUND TO LOOP
 	private void Update () {
 		transform.Translate (Vector2.left * speed * Time.deltaTime);
 		if (transform.position.x <= endX) {

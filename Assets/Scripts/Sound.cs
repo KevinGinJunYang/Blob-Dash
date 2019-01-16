@@ -20,6 +20,7 @@ public class Sound : MonoBehaviour {
 		UpdateIcon ();
 	}
 
+	//SETS AUDIO AND ICON CHANGE
 	void UpdateIcon(){
 		if (PlayerPrefs.GetInt ("Muted", 0) == 0) {
 			AudioListener.volume = 1;
